@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Logging in to DockerHub...
       - docker login -u $dockerhub_username -p $dockerhub_password
-      - REPOSITORY_URI=530349173736.dkr.ecr.us-east-1.amazonaws.com/test
+      - REPOSITORY_URI=530349173736.dkr.ecr.us-east-1.amazonaws.com
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
